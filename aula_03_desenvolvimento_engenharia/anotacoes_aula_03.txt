@@ -1,0 +1,32 @@
+- Feature Engineering
+
+- Seleção de Features: no dataset de treino, NÃO no dataset inteiro.
+
+- Testa modelo mais simples. Exemplo: Regressão Logística
+
+- Comparação de algoritmos. Testa outros. Exemplo: Árvore de Decisão -> Random Forest e escolhe 1
+
+- Define Métricas do modelo.Acurácia? Recall? F1-Score? Depende do problema de negócio.
+
+- Seleção de algoritmo, configurações de Parâmetros do modelo e Hiperparâmetros. Define antes do treino.
+  -> Técnicas de Hiperparâmetros:
+     - GRID SEARCH. Escolhe os parâmetros e vai ajustando e testando.
+     - RANDOM SEARCH. Busca aleatória dentro de um intervalo. + rápido.
+     - CROS-VALIDATION (CV). Durante o GRID-SEARCH utilizamos o CV (GridSearchCV)
+
+  -> Cuidado para não "viciar" os hiperparâmetros e causar OVERFITTING.
+
+- Tunning dos Hiperparâmetros do melhor modelo
+
+- Pipelines
+  -> Transformadores: Métodos que preparam dados (Scaler, OneHotEncoder). Tem fit e transform.
+  -> Seletores: Métodos que reduzem dimensionalidade (SelectKBest).
+  -> Estimador Final: O algoritmo preditivo (RandomForest). Tem fit e predict.
+
+- Pilares da Reprodutibilidade
+  -> Random Seeds: Para garantir que os resultado sejam idênticos a cada execução
+  -> Versionamento: Saber qual código gerou cada modelo
+  -> Persistência: Salvar o pipeline treinado (Pickle / Joblib) para reutilização futura
+  -> Migre funções úteis para scripts python
+
+
